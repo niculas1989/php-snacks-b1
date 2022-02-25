@@ -16,16 +16,16 @@ $age = $_GET['age'] ?? '';
 
  */
 
-$name = 'ni';
+$name = 'nicolas';
 
-$mail = 'nicolas.maranzano@libero.it';
+$mail = 'nicolasmaranzanoliberoit';
 
-$age = '';
+$age = 32;
 
 if (empty($mail) || empty($name) || empty($age)) {
     echo 'Accesso negato';
 } else {
-    if (strpos($mail, '@') === true && strpos($mail, '.') === true or strlen($name) > 3 or is_numeric($age)) {
+    if ((strpos($mail, '@') !== false && strpos($mail, '.') !== false) && strlen($name) > 3 && is_numeric($age)) {
         echo 'Accesso riuscito';
     } else {
         echo 'Accesso negato';
