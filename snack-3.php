@@ -6,4 +6,4 @@ Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà co
 */
 
 //| Random Number
-$randoms = rand(1, 15);
+$randoms = rand(1, 100);
