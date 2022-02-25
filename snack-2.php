@@ -2,42 +2,41 @@
 
 $posts = [
 
-    '10/01/2019' => [
-        [
-            'title' => 'Post 1',
-            'author' => 'Michele Papagni',
-            'text' => 'Testo post 1'
-        ],
-        [
-            'title' => 'Post 2',
-            'author' => 'Michele Papagni',
-            'text' => 'Testo post 2'
-        ],
+    [
+        'title' => 'Post 1',
+        'author' => 'Michele Papagni',
+        'text' => 'Testo post 1'
     ],
-    '10/02/2019' => [
-        [
-            'title' => 'Post 3',
-            'author' => 'Michele Papagni',
-            'text' => 'Testo post 3'
-        ]
+    [
+        'title' => 'Post 2',
+        'author' => 'Michele Papagni',
+        'text' => 'Testo post 2'
     ],
-    '15/05/2019' => [
-        [
-            'title' => 'Post 4',
-            'author' => 'Michele Papagni',
-            'text' => 'Testo post 4'
-        ],
-        [
-            'title' => 'Post 5',
-            'author' => 'Michele Papagni',
-            'text' => 'Testo post 5'
-        ],
-        [
-            'title' => 'Post 6',
-            'author' => 'Michele Papagni',
-            'text' => 'Testo post 6'
-        ]
+
+
+    [
+        'title' => 'Post 3',
+        'author' => 'Michele Papagni',
+        'text' => 'Testo post 3'
     ],
+
+
+    [
+        'title' => 'Post 4',
+        'author' => 'Michele Papagni',
+        'text' => 'Testo post 4'
+    ],
+    [
+        'title' => 'Post 5',
+        'author' => 'Michele Papagni',
+        'text' => 'Testo post 5'
+    ],
+    [
+        'title' => 'Post 6',
+        'author' => 'Michele Papagni',
+        'text' => 'Testo post 6'
+    ]
+
 ];
 
 
@@ -63,6 +62,15 @@ Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z<br />
 </head>
 
 <body>
+    <ul>
+        <?php for ($i = 0; $i < count($posts); $i++) : ?>
+            <li>
+                <h2><?= $posts[$i]['title'] ?></h2>
+                <h5><?= $posts[$i]['author'] ?></h5>
+                <p><?= $posts[$i]['text'] ?></p>
+            </li>
+        <?php endfor; ?>
+    </ul>
 
 </body>
 
