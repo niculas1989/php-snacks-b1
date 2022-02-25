@@ -8,15 +8,15 @@ Creare un array con 15 numeri casuali, tenendo conto che l’array non dovrà co
 //| Max numbers in arra
 $max_numbers = 15;
 
-//| Random Number
-$randoms = rand(1, 100);
 
 //| definiamo un array vuoto
 $array = [];
 var_dump($array);
 
 for ($i = 0; $i < $max_numbers; $i++) {
-    $array .= $randoms;
+    //| Random Number
+    $randoms = rand(1, 100);
+    $array[] .= $randoms;
 }
 
 var_dump($array);
