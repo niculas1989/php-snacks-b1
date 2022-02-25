@@ -7,9 +7,27 @@ Passare come parametri GET name, mail e age e verificare (cercando i metodi che 
 
 */
 
-//# prendiamo, attraverso il parametro GET, i seguenti valori: name, mail e age
+/* //# prendiamo, attraverso il parametro GET, i seguenti valori: name, mail e age
 $name = $_GET['name'] ?? '';
 
 $mail = $_GET['mail'] ?? '';
 
 $age = $_GET['age'] ?? '';
+
+ */
+
+$name = 'nicolas';
+
+$mail = 'nicolas.maranzano@libero.it';
+
+$age = 32;
+
+if (empty($mail) || empty($name) || empty($age)) {
+    echo 'Accesso negato';
+} else {
+    if (strpos($mail, '@') === true && strpos($mail, '.') === true || strlen($name) > 3 || is_numeric($age)) {
+        echo 'Accesso riuscito';
+    }
+}
+
+var_dump($name);
