@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /*
 
@@ -8,8 +8,8 @@ Passare come parametri GET name, mail e age e verificare (cercando i metodi che 
 */
 
 //# prendiamo, attraverso il parametro GET, i seguenti valori: name, mail e age
-$name = $_GET['name'];
+$name = $_GET['name'] ?? '';
 
-$mail = $_GET['mail'];
+$mail = $_GET['mail'] ?? '';
 
-$age = $_GET['age'];
+$age = $_GET['age'] ?? '';
