@@ -1,41 +1,48 @@
 <?php
 
 $posts = [
-
+    '10/01/2019' =>
     [
-        'title' => 'Post 1',
-        'author' => 'Michele Papagni',
-        'text' => 'Testo post 1'
-    ],
-    [
-        'title' => 'Post 2',
-        'author' => 'Michele Papagni',
-        'text' => 'Testo post 2'
-    ],
-
-
-    [
-        'title' => 'Post 3',
-        'author' => 'Michele Papagni',
-        'text' => 'Testo post 3'
+        [
+            'title' => 'Post 1',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 1'
+        ],
+        [
+            'title' => 'Post 2',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 2'
+        ],
     ],
 
+    '10/02/2019' =>
+    [
+        [
+            'title' => 'Post 3',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 3'
+        ]
+    ],
 
-    [
-        'title' => 'Post 4',
-        'author' => 'Michele Papagni',
-        'text' => 'Testo post 4'
-    ],
-    [
-        'title' => 'Post 5',
-        'author' => 'Michele Papagni',
-        'text' => 'Testo post 5'
-    ],
-    [
-        'title' => 'Post 6',
-        'author' => 'Michele Papagni',
-        'text' => 'Testo post 6'
+    '15/05/2019' => [
+        [
+            'title' => 'Post 4',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 4'
+        ],
+        [
+            'title' => 'Post 5',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 5'
+        ],
+        [
+            'title' => 'Post 6',
+            'author' => 'Michele Papagni',
+            'text' => 'Testo post 6'
+        ]
     ]
+
+
 
 ];
 
@@ -65,9 +72,12 @@ Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z<br />
     <ul>
         <?php for ($i = 0; $i < count($posts); $i++) : ?>
             <li>
-                <h2><?= $posts[$i]['title'] ?></h2>
-                <h5><?= $posts[$i]['author'] ?></h5>
-                <p><?= $posts[$i]['text'] ?></p>
+                <h2><?= key($posts) ?></h2>
+                <?php for ($k = 0; $k < count($posts[key($posts)]); $k++) : ?>
+                    <h2><?= $posts[key($posts)][$k]['title'] ?></h2>
+                    <h5><?= $posts[key($posts)][$k]['author'] ?></h5>
+                    <p><?= $posts[key($posts)][$k]['text'] ?></p>
+                <?php endfor; ?>
             </li>
         <?php endfor; ?>
     </ul>
