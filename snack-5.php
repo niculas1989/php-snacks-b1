@@ -41,17 +41,39 @@ $db = [
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Snack-5</title>
 </head>
+<style>
+    div {
+        height: 200px;
+        width: 300px;
+        text-align: center;
+        vertical-align: 200px;
+        color: black;
+    }
+
+    .teachers {
+        background-color: gray;
+    }
+
+    .pm {
+        background-color: green;
+    }
+</style>
 
 <body>
     <div>
         <h2>All'interno della classe abbiamo questa suddivisione:</h2>
-        <?php for ($i = 0; $i < count($db); $i++) : ?>
-            <h3><?= key($db) ?></h3>
-            <ul>
-                <?php for ($j = 0; $j < count($db[key($db)]); $j++) : ?>
-                    <li><?= $db[key($db)][$j]['name'] . ' ' . $db[key($db)][$j]['lastname'] ?></li>
-                <?php endfor; ?>
-            </ul>
+        <?php for ($i = 0; $i < count($db); $i++) :
+
+            $class = key($db) == 'teachers' ? 'teachers' : 'pm';
+        ?>
+            <h2><?= key($db) ?></h2>
+            <div class=<?= $class ?>>
+                <ul>
+                    <?php for ($j = 0; $j < count($db[key($db)]); $j++) : ?>
+                        <li><?= $db[key($db)][$j]['name'] . ' ' . $db[key($db)][$j]['lastname'] ?></li>
+                    <?php endfor; ?>
+                </ul>
+            </div>
             <?php next($db) ?>
         <?php endfor; ?>
     </div>
