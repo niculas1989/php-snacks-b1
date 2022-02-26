@@ -79,6 +79,7 @@ Qui l’array di esempio: https://www.codepile.net/pile/R2K5d68z<br />
                     <p><?= $posts[key($posts)][$k]['text'] ?></p>
                 <?php endfor; ?>
             </li>
+            <?php next($posts) ?>
         <?php endfor; ?>
     </ul>
 
