@@ -90,7 +90,7 @@ $db = [
             <h2><?= $key ?></h2>
             <div class=<?= $class ?>>
                 <ul>
-                    <?php foreach ($item as $k => $i) : ?>
+                    <?php foreach ($item as $i) : ?>
                         <li><?= $i['name'] . ' ' . $i['lastname'] ?></li>
                     <?php endforeach; ?>
                 </ul>
