@@ -13,10 +13,22 @@ $max_numbers = 15;
 $array = [];
 var_dump($array);
 
-for ($i = 0; $i < $max_numbers; $i++) {
+/* for ($i = 0; $i < $max_numbers; $i++) {
     //| Random Number
     $randoms = rand(1, 100);
-    $array[] .= $randoms;
+    if (in_array($randoms, $array)) {
+        $array[] .= $randoms;
+    }
+} */
+
+
+//! Altra possibilità
+while (count($array) !== $max_numbers) {
+    //| Random Number
+    $randoms = rand(1, 100);
+    if (in_array($randoms, $array)) {
+        $array[] .= $randoms;
+    }
 }
 
 var_dump($array);

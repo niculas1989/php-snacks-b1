@@ -25,7 +25,7 @@ $age = 32;
 if (empty($mail) || empty($name) || empty($age)) {
     echo 'Accesso negato';
 } else {
-    if ((strpos($mail, '@') !== false && strpos($mail, '.') !== false) && strlen($name) > 3 && is_numeric($age)) {
+    if ((strpos($mail, '@') !== false && strpos($mail, '.') !== false) && mb_strlen($name) > 3 && is_numeric($age)) {
         echo 'Accesso riuscito';
     } else {
         echo 'Accesso negato';
