@@ -30,6 +30,27 @@ $db = [
     ]
 ];
 
+
+//! soluzione con FOR
+/*
+ <div>
+        <h2>All'interno della classe abbiamo questa suddivisione:</h2>
+        <?php for ($i = 0; $i < count($db); $i++) :
+
+            $class = key($db) == 'teachers' ? 'teachers' : 'pm';
+        ?>
+            <h2><?= key($db) ?></h2>
+            <div class=<?= $class ?>>
+                <ul>
+                    <?php for ($j = 0; $j < count($db[key($db)]); $j++) : ?>
+                        <li><?= $db[key($db)][$j]['name'] . ' ' . $db[key($db)][$j]['lastname'] ?></li>
+                    <?php endfor; ?>
+                </ul>
+            </div>
+            <?php next($db) ?>
+        <?php endfor; ?>
+    </div>
+*/
 ?>
 
 <!DOCTYPE html>
@@ -62,20 +83,19 @@ $db = [
 <body>
     <div>
         <h2>All'interno della classe abbiamo questa suddivisione:</h2>
-        <?php for ($i = 0; $i < count($db); $i++) :
+        <?php foreach ($db as $key => $item) :
 
-            $class = key($db) == 'teachers' ? 'teachers' : 'pm';
+            $class = $key == 'teachers' ? 'teachers' : 'pm';
         ?>
-            <h2><?= key($db) ?></h2>
+            <h2><?= $key ?></h2>
             <div class=<?= $class ?>>
                 <ul>
-                    <?php for ($j = 0; $j < count($db[key($db)]); $j++) : ?>
-                        <li><?= $db[key($db)][$j]['name'] . ' ' . $db[key($db)][$j]['lastname'] ?></li>
-                    <?php endfor; ?>
+                    <?php foreach ($item as $k => $i) : ?>
+                        <li><?= $i['name'] . ' ' . $i['lastname'] ?></li>
+                    <?php endforeach; ?>
                 </ul>
             </div>
-            <?php next($db) ?>
-        <?php endfor; ?>
+        <?php endforeach; ?>
     </div>
 </body>
 
