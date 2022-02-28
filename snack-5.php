@@ -83,15 +83,15 @@ $db = [
 <body>
     <div>
         <h2>All'interno della classe abbiamo questa suddivisione:</h2>
-        <?php foreach ($db as $key => $item) :
+        <?php foreach ($db as $role => $people) :
 
-            $class = $key == 'teachers' ? 'teachers' : 'pm';
+            $class = $role == 'teachers' ? 'teachers' : 'pm';
         ?>
-            <h2><?= $key ?></h2>
+            <h2><?= $role ?></h2>
             <div class=<?= $class ?>>
                 <ul>
-                    <?php foreach ($item as $i) : ?>
-                        <li><?= $i['name'] . ' ' . $i['lastname'] ?></li>
+                    <?php foreach ($people as $person) : ?>
+                        <li><?= "$person[name] $person[lastname]" ?></li>
                     <?php endforeach; ?>
                 </ul>
             </div>
